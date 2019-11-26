@@ -18,6 +18,8 @@ import javax.swing.JTextPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JFormattedTextField;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ComplaintForm extends JFrame {
 
@@ -74,12 +76,29 @@ public class ComplaintForm extends JFrame {
 		contentPane.add(panel);
 		
 		JLabel label = new JLabel("Logout");
+		label.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				setVisible(false);
+				LoginForm lf = new LoginForm();
+				lf.setVisible(true);
+			}
+		});
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("Lucida Grande", Font.PLAIN, 23));
 		label.setBounds(6, 453, 137, 38);
 		panel.add(label);
 		
 		JLabel label_1 = new JLabel("Announcements");
+		label_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				setVisible(false);
+				Announcements a = new Announcements();
+				a.setVisible(true);
+				
+			}
+		});
 		label_1.setHorizontalAlignment(SwingConstants.LEFT);
 		label_1.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		label_1.setBounds(6, 198, 155, 38);

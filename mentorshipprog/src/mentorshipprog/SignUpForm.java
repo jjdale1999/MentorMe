@@ -20,6 +20,8 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Window.Type;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class SignUpForm extends JFrame {
 
@@ -176,6 +178,7 @@ public class SignUpForm extends JFrame {
 		contentPane.add(deptcbox);
 		
 		JComboBox<?> majorcbox = new JComboBox<Object>();
+		majorcbox.setModel(new DefaultComboBoxModel(new String[] {"Comp Sci ", "Bio Chem ", "Electronics "}));
 		majorcbox.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		majorcbox.setBounds(647, 256, 195, 27);
 		contentPane.add(majorcbox);
@@ -185,30 +188,7 @@ public class SignUpForm extends JFrame {
 		yearcbox.setBounds(387, 314, 88, 27);
 		contentPane.add(yearcbox);
 		
-		JButton btnSubmit = new JButton("Submit");
-		btnSubmit.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		btnSubmit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(!fnametxt.getText().equals("")) {
-					//add to text file
-					
-						
-				}
-				if(fnametxt.getText().equals("")) {
-					System.out.print("firstname field is empty");
-				}
-				if(lnametxt.getText().equals("")) {
-					System.out.print("last name field is empty");
-				}
-				if(emailtxt.getText().equals("")) {
-					System.out.print("email address field is empty");
-				}
-				
-				//need to do for the rest of the fields
-			}
-		});
-		btnSubmit.setBounds(771, 521, 117, 29);
-		contentPane.add(btnSubmit);
+		
 		
 		JButton btnCancel = new JButton("Cancel");
 		btnCancel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
@@ -227,12 +207,28 @@ public class SignUpForm extends JFrame {
 		contentPane.add(panel);
 		
 		JLabel label = new JLabel("Logout");
+		label.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				setVisible(true);
+				LoginForm lf = new LoginForm();
+				lf.setVisible(true);
+			}
+		});
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("Lucida Grande", Font.PLAIN, 23));
 		label.setBounds(6, 453, 137, 38);
 		panel.add(label);
 		
 		JLabel label_1 = new JLabel("Announcements");
+		label_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				setVisible(false);
+				Announcements a = new Announcements();
+				a.setVisible(true);
+			}
+		});
 		label_1.setHorizontalAlignment(SwingConstants.LEFT);
 		label_1.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		label_1.setBounds(6, 198, 155, 38);
@@ -260,6 +256,14 @@ public class SignUpForm extends JFrame {
 		panel.add(label_4);
 		
 		JLabel label_5 = new JLabel("Complaint");
+		label_5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				setVisible(false);
+				ComplaintForm cf = new ComplaintForm ();
+				cf.setVisible(true);
+			}
+		});
 		label_5.setHorizontalAlignment(SwingConstants.CENTER);
 		label_5.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		label_5.setBounds(6, 387, 155, 38);
@@ -289,5 +293,44 @@ public class SignUpForm extends JFrame {
 		panel_4.setBackground(Color.YELLOW);
 		panel_4.setBounds(264, 416, 530, 10);
 		contentPane.add(panel_4);
+		JButton btnSubmit = new JButton("Submit");
+		btnSubmit.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
+		btnSubmit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(!fnametxt.getText().equals("")) {
+					//add to text file
+					
+					Mentor m =new Mentor(fnametxt.getText(), lnametxt.getText(), majorcbox.getSelectedItem().toString());
+					System.out.print(m.toString());
+					Assignments as = new Assignments(m);
+					
+						
+				}
+				if(fnametxt.getText().equals("")) {
+					System.out.print("firstname field is empty");
+				}
+				if(lnametxt.getText().equals("")) {
+					System.out.print("last name field is empty");
+				}
+				if(emailtxt.getText().equals("")) {
+					System.out.print("email address field is empty");
+				}
+				
+				//need to do for the rest of the fields
+			}
+		});
+		btnSubmit.setBounds(771, 521, 117, 29);
+		contentPane.add(btnSubmit);
+		
+		JButton btnHome = new JButton("home");
+		btnHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainScreen ms = new MainScreen("JAD");
+				ms.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnHome.setBounds(173, 88, 117, 29);
+		contentPane.add(btnHome);
 	}
 }
