@@ -1,0 +1,5 @@
+package mentorshipprog;
+
+class Mentee {
+
+}
