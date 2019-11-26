@@ -13,10 +13,13 @@ import javax.swing.JCheckBox;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.Window.Type;
 
 public class SignUpForm extends JFrame {
 
@@ -46,120 +49,139 @@ public class SignUpForm extends JFrame {
 	 * Create the frame.
 	 */
 	public SignUpForm() {
+		setType(Type.POPUP);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 705, 635);
+		setBounds(100, 100, 894, 578);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 0, 139));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("First");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		lblNewLabel.setBounds(149, 100, 102, 16);
+		lblNewLabel.setBounds(249, 67, 102, 16);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblEmailaddress = new JLabel("EmailAddress");
+		lblEmailaddress.setForeground(new Color(255, 255, 255));
 		lblEmailaddress.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		lblEmailaddress.setBounds(343, 164, 130, 16);
+		lblEmailaddress.setBounds(505, 153, 130, 16);
 		contentPane.add(lblEmailaddress);
 		
 		JLabel lblPhone = new JLabel("Phone #:");
+		lblPhone.setForeground(new Color(255, 255, 255));
 		lblPhone.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		lblPhone.setBounds(42, 164, 80, 16);
+		lblPhone.setBounds(234, 153, 80, 16);
 		contentPane.add(lblPhone);
 		
 		JLabel lblDepartment = new JLabel("Department");
+		lblDepartment.setForeground(new Color(255, 255, 255));
 		lblDepartment.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		lblDepartment.setBounds(42, 227, 152, 16);
+		lblDepartment.setBounds(234, 260, 152, 16);
 		contentPane.add(lblDepartment);
 		
 		JLabel lblYear = new JLabel("Year");
+		lblYear.setForeground(new Color(255, 255, 255));
 		lblYear.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		lblYear.setBounds(42, 295, 61, 16);
+		lblYear.setBounds(266, 321, 61, 16);
 		contentPane.add(lblYear);
 		
 		JLabel lblMajor = new JLabel("Major");
+		lblMajor.setForeground(new Color(255, 255, 255));
 		lblMajor.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		lblMajor.setBounds(335, 220, 61, 16);
+		lblMajor.setBounds(574, 260, 61, 16);
 		contentPane.add(lblMajor);
 		
 		JLabel lblLast = new JLabel("Last");
+		lblLast.setForeground(new Color(255, 255, 255));
 		lblLast.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		lblLast.setBounds(400, 100, 61, 16);
+		lblLast.setBounds(510, 67, 61, 16);
 		contentPane.add(lblLast);
 		
 	
 		
 		JLabel lblMentee = new JLabel("Mentor");
+		lblMentee.setForeground(new Color(255, 255, 255));
 		lblMentee.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		lblMentee.setBounds(311, 6, 177, 16);
+		lblMentee.setBounds(492, 20, 177, 16);
 		contentPane.add(lblMentee);
 		
 		JCheckBox chckbxIAcceptTerms = new JCheckBox("I accept terms .... blah blah blah .....");
+		chckbxIAcceptTerms.setForeground(new Color(255, 255, 255));
 		chckbxIAcceptTerms.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		chckbxIAcceptTerms.setBounds(29, 452, 335, 23);
+		chckbxIAcceptTerms.setBounds(215, 438, 335, 23);
 		contentPane.add(chckbxIAcceptTerms);
 		
 		JRadioButton radioButton = new JRadioButton("1");
+		radioButton.setForeground(new Color(255, 255, 255));
 		radioButton.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		radioButton.setBounds(218, 368, 61, 23);
+		radioButton.setBounds(706, 317, 61, 23);
 		contentPane.add(radioButton);
 		
 		JRadioButton radioButton_1 = new JRadioButton("2");
+		radioButton_1.setForeground(new Color(255, 255, 255));
 		radioButton_1.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		radioButton_1.setBounds(287, 368, 52, 23);
+		radioButton_1.setBounds(706, 354, 52, 23);
 		contentPane.add(radioButton_1);
 		
 		JRadioButton radioButton_2 = new JRadioButton("3");
-		radioButton_2.setBounds(348, 368, 52, 23);
+		radioButton_2.setForeground(new Color(255, 255, 255));
+		radioButton_2.setBounds(706, 394, 52, 23);
 		contentPane.add(radioButton_2);
 		
+		ButtonGroup bg = new ButtonGroup();
+		bg.add(radioButton);
+		bg.add(radioButton_1);
+		bg.add(radioButton_2);
 		JLabel lblNumberOfMentees = new JLabel("Number of Mentees");
+		lblNumberOfMentees.setForeground(new Color(255, 255, 255));
 		lblNumberOfMentees.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		lblNumberOfMentees.setBounds(36, 372, 170, 16);
+		lblNumberOfMentees.setBounds(524, 321, 170, 16);
 		contentPane.add(lblNumberOfMentees);
 		
 		fnametxt = new JTextField();
 		fnametxt.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		fnametxt.setBounds(206, 95, 130, 26);
+		fnametxt.setBounds(326, 62, 130, 26);
 		contentPane.add(fnametxt);
 		fnametxt.setColumns(10);
 		
 		lnametxt = new JTextField();
 		lnametxt.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		lnametxt.setText("eg.Brown");
-		lnametxt.setBounds(444, 95, 130, 26);
+		lnametxt.setBounds(634, 62, 130, 26);
 		contentPane.add(lnametxt);
 		lnametxt.setColumns(10);
 		
 		emailtxt = new JTextField();
 		emailtxt.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		emailtxt.setText("eg.brownjohn@gmail.com");
-		emailtxt.setBounds(451, 159, 248, 26);
+		emailtxt.setBounds(634, 148, 248, 26);
 		contentPane.add(emailtxt);
 		emailtxt.setColumns(10);
 		
 		phonenumtxt = new JTextField();
 		phonenumtxt.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		phonenumtxt.setText("eg.876-303-3889");
-		phonenumtxt.setBounds(134, 159, 149, 26);
+		phonenumtxt.setBounds(326, 148, 149, 26);
 		contentPane.add(phonenumtxt);
 		phonenumtxt.setColumns(10);
 		
 		JComboBox deptcbox = new JComboBox();
 		deptcbox.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		deptcbox.setModel(new DefaultComboBoxModel(new String[] {"Chemistry", "Biology", "Computing", "Mathematics", "Geography"}));
-		deptcbox.setBounds(149, 223, 130, 27);
+		deptcbox.setBounds(361, 256, 130, 27);
 		contentPane.add(deptcbox);
 		
 		JComboBox majorcbox = new JComboBox();
 		majorcbox.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		majorcbox.setBounds(395, 216, 195, 27);
+		majorcbox.setBounds(647, 256, 195, 27);
 		contentPane.add(majorcbox);
 		
 		JComboBox yearcbox = new JComboBox();
 		yearcbox.setModel(new DefaultComboBoxModel(new String[] {"First", "Second", "Third"}));
-		yearcbox.setBounds(84, 291, 88, 27);
+		yearcbox.setBounds(387, 314, 88, 27);
 		contentPane.add(yearcbox);
 		
 		JButton btnSubmit = new JButton("Submit");
@@ -184,7 +206,7 @@ public class SignUpForm extends JFrame {
 				//need to do for the rest of the fields
 			}
 		});
-		btnSubmit.setBounds(496, 556, 117, 29);
+		btnSubmit.setBounds(771, 521, 117, 29);
 		contentPane.add(btnSubmit);
 		
 		JButton btnCancel = new JButton("Cancel");
@@ -194,7 +216,77 @@ public class SignUpForm extends JFrame {
 				
 			}
 		});
-		btnCancel.setBounds(283, 556, 117, 29);
+		btnCancel.setBounds(646, 521, 117, 29);
 		contentPane.add(btnCancel);
+		
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(0, 0, 161, 554);
+		contentPane.add(panel);
+		
+		JLabel label = new JLabel("Logout");
+		label.setHorizontalAlignment(SwingConstants.CENTER);
+		label.setFont(new Font("Lucida Grande", Font.PLAIN, 23));
+		label.setBounds(6, 453, 137, 38);
+		panel.add(label);
+		
+		JLabel label_1 = new JLabel("Announcements");
+		label_1.setHorizontalAlignment(SwingConstants.LEFT);
+		label_1.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		label_1.setBounds(6, 198, 155, 38);
+		panel.add(label_1);
+		
+		JLabel label_2 = new JLabel("UserName");
+		label_2.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
+		label_2.setBounds(37, 142, 93, 16);
+		panel.add(label_2);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(6, 6, 149, 131);
+		panel.add(panel_1);
+		
+		JLabel label_3 = new JLabel("View Mentors");
+		label_3.setHorizontalAlignment(SwingConstants.CENTER);
+		label_3.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		label_3.setBounds(6, 267, 155, 38);
+		panel.add(label_3);
+		
+		JLabel label_4 = new JLabel("View Mentees");
+		label_4.setHorizontalAlignment(SwingConstants.CENTER);
+		label_4.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		label_4.setBounds(6, 332, 155, 38);
+		panel.add(label_4);
+		
+		JLabel label_5 = new JLabel("Complaint");
+		label_5.setHorizontalAlignment(SwingConstants.CENTER);
+		label_5.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
+		label_5.setBounds(6, 387, 155, 38);
+		panel.add(label_5);
+		
+		JLabel label_6 = new JLabel("Version 1");
+		label_6.setBounds(41, 532, 61, 16);
+		panel.add(label_6);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(Color.RED);
+		panel_2.setBounds(6, 514, 149, 6);
+		panel.add(panel_2);
+		
+		JLabel label_7 = new JLabel("Faculty of Science and Technology");
+		label_7.setForeground(new Color(255, 215, 0));
+		label_7.setFont(new Font(".SF NS Mono", Font.PLAIN, 17));
+		label_7.setBounds(161, -11, 377, 39);
+		contentPane.add(label_7);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(new Color(255, 255, 0));
+		panel_3.setBounds(264, 223, 530, 10);
+		contentPane.add(panel_3);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(Color.YELLOW);
+		panel_4.setBounds(264, 416, 530, 10);
+		contentPane.add(panel_4);
 	}
 }

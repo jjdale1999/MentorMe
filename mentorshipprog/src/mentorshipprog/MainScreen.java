@@ -61,6 +61,14 @@ public class MainScreen extends JFrame {
 		panel.add(lblNewLabel);
 		
 		JLabel lblAnnouncements = new JLabel("Announcements");
+		lblAnnouncements.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Announcements a = new Announcements();
+				a.setVisible(true);
+				setVisible(false);
+			}
+		});
 		lblAnnouncements.setHorizontalAlignment(SwingConstants.LEFT);
 		lblAnnouncements.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		lblAnnouncements.setBounds(6, 198, 155, 38);

@@ -182,7 +182,7 @@ public class ComplaintForm extends JFrame {
 				formattedTextField.setVisible(false);
 				
 				createtxt.setVisible(false);
-				hello.add(formattedTextField.getText());
+				hello.add(0,formattedTextField.getText());
 				String text = "";
 				for(String el : hello) {
 					text+=el+'\n'+'\n';
