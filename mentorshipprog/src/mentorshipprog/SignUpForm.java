@@ -48,10 +48,11 @@ public class SignUpForm extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	@SuppressWarnings({ "unchecked", "unchecked", "unchecked" })
 	public SignUpForm() {
 		setType(Type.POPUP);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 894, 578);
+		setBounds(100, 100, 894, 575);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 0, 139));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -168,19 +169,19 @@ public class SignUpForm extends JFrame {
 		contentPane.add(phonenumtxt);
 		phonenumtxt.setColumns(10);
 		
-		JComboBox deptcbox = new JComboBox();
+		JComboBox<String> deptcbox = new JComboBox<String>();
 		deptcbox.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		deptcbox.setModel(new DefaultComboBoxModel(new String[] {"Chemistry", "Biology", "Computing", "Mathematics", "Geography"}));
+		deptcbox.setModel(new DefaultComboBoxModel<String>(new String[] {"Chemistry", "Biology", "Computing", "Mathematics", "Geography"}));
 		deptcbox.setBounds(361, 256, 130, 27);
 		contentPane.add(deptcbox);
 		
-		JComboBox majorcbox = new JComboBox();
+		JComboBox<?> majorcbox = new JComboBox<Object>();
 		majorcbox.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		majorcbox.setBounds(647, 256, 195, 27);
 		contentPane.add(majorcbox);
 		
-		JComboBox yearcbox = new JComboBox();
-		yearcbox.setModel(new DefaultComboBoxModel(new String[] {"First", "Second", "Third"}));
+		JComboBox<String> yearcbox = new JComboBox<String>();
+		yearcbox.setModel(new DefaultComboBoxModel<String>(new String[] {"First", "Second", "Third"}));
 		yearcbox.setBounds(387, 314, 88, 27);
 		contentPane.add(yearcbox);
 		

@@ -97,7 +97,7 @@ public class LoginForm extends JFrame {
 		JButton btnNewButton = new JButton("LOGIN");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				loginmanager lm = new loginmanager(textField.getText(),passwordField.getText());
+				Loginmanager lm = new Loginmanager(textField.getText(),String.valueOf(passwordField.getPassword()));
 				if(lm.checkcredintials()) {
 					MainScreen ms = new MainScreen(textField.getText());
 					ms.setVisible(true);
