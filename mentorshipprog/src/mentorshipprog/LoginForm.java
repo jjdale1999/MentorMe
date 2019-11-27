@@ -18,6 +18,7 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class LoginForm extends JFrame {
 
@@ -64,6 +65,13 @@ public class LoginForm extends JFrame {
 		panel_1.setBackground(new Color(204, 102, 51));
 		panel_1.setBounds(46, 41, 264, 335);
 		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("MentorMe");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(-20, 124, 302, 83);
+		lblNewLabel.setFont(new Font("Lao MN", Font.BOLD | Font.ITALIC, 51));
+		panel_1.add(lblNewLabel);
 		
 		JLabel lblUserName = new JLabel("User Name:");
 		lblUserName.setFont(new Font("Lucida Grande", Font.BOLD, 15));
@@ -111,6 +119,17 @@ public class LoginForm extends JFrame {
 		btnNewButton.setBackground(new Color(0, 0, 102));
 		btnNewButton.setBounds(457, 319, 117, 29);
 		contentPane.add(btnNewButton);
+		
+		JButton btnBack = new JButton("BACK");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Option op = new Option();
+				op.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnBack.setBounds(566, 6, 117, 29);
+		contentPane.add(btnBack);
 
 	}
 }

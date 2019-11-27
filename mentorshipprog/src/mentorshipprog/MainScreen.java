@@ -94,12 +94,28 @@ public class MainScreen extends JFrame {
 		panel.add(panel_1);
 		
 		JLabel lblViewMentors = new JLabel("View Mentors");
+		lblViewMentors.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ViewStudentInfo vsi = new ViewStudentInfo("mentor");
+				vsi.setVisible(true);
+				setVisible(false);
+			}
+		});
 		lblViewMentors.setHorizontalAlignment(SwingConstants.CENTER);
 		lblViewMentors.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		lblViewMentors.setBounds(6, 267, 155, 38);
 		panel.add(lblViewMentors);
 		
 		JLabel lblViewMentees = new JLabel("View Mentees");
+		lblViewMentees.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ViewStudentInfo vsi = new ViewStudentInfo("mentee");
+				vsi.setVisible(true);
+				setVisible(false);
+			}
+		});
 		lblViewMentees.setHorizontalAlignment(SwingConstants.CENTER);
 		lblViewMentees.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		lblViewMentees.setBounds(6, 332, 155, 38);
@@ -185,39 +201,5 @@ public class MainScreen extends JFrame {
 		JButton btnNewButton = new JButton("search");
 		btnNewButton.setBounds(918, 27, 74, 30);
 		contentPane.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("mentee signup");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				SignUpFormMentee ms = new SignUpFormMentee();
-				ms.setVisible(true);
-				setVisible(false);
-			}
-		});
-		btnNewButton_1.setBounds(203, 128, 117, 29);
-		contentPane.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("MentorSignup");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				SignUpForm ms = new SignUpForm();
-				ms.setVisible(true);
-				setVisible(false);
-			}
-			
-		});
-		btnNewButton_2.setBounds(344, 128, 117, 29);
-		contentPane.add(btnNewButton_2);
-		
-		JButton btnNewButton_3 = new JButton("Print");
-		btnNewButton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Assignments a = new Assignments();
-				System.out.print(a.toString());
-				
-			}
-		});
-		btnNewButton_3.setBounds(203, 215, 117, 29);
-		contentPane.add(btnNewButton_3);
 	}
 }

@@ -8,7 +8,7 @@ public class Mentor extends Person {
     private ArrayList <String> menteePrint = new ArrayList<String>(3);
     private Status status; 
     private String major;
-
+   
     
 
     public Mentor(String firstName, String lastName, String major){
@@ -32,8 +32,12 @@ public class Mentor extends Person {
         this.mentee = mentee;
         
         if(status == Status.isAvailable){
-            if(menteeList.size() <3){
+            if(menteeList.size() <2){
                 menteeList.add(mentee);
+                
+            }else if(menteeList.size() == 2){
+                menteeList.add(mentee);
+                //status = Status.Unavailable;
             }
         }
         if(menteeList.size() == 3 ){
@@ -43,6 +47,7 @@ public class Mentor extends Person {
         if(status == Status.Unavailable){
             //if(menteeList.size())
             System.out.println("This mentor is unavailable for any more mentees");
+
         }
     }
 
@@ -64,8 +69,6 @@ public class Mentor extends Person {
         return status.toString();
         
     }
-
-    public b
 
 
 
