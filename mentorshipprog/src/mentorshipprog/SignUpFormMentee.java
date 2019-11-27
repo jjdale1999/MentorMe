@@ -111,10 +111,10 @@ public class SignUpFormMentee extends JFrame {
 		lblMentee.setBounds(492, 20, 177, 16);
 		contentPane.add(lblMentee);
 		
-		JCheckBox chckbxIAcceptTerms = new JCheckBox("I accept terms .... blah blah blah .....");
+		JCheckBox chckbxIAcceptTerms = new JCheckBox("I accept terms agree to the terms and conditions");
 		chckbxIAcceptTerms.setForeground(new Color(255, 255, 255));
 		chckbxIAcceptTerms.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
-		chckbxIAcceptTerms.setBounds(215, 438, 335, 23);
+		chckbxIAcceptTerms.setBounds(215, 438, 429, 23);
 		contentPane.add(chckbxIAcceptTerms);
 		
 		ButtonGroup bg = new ButtonGroup();
@@ -169,6 +169,9 @@ public class SignUpFormMentee extends JFrame {
 		btnCancel.setFont(new Font("Lucida Grande", Font.PLAIN, 16));
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Option op = new Option();
+				op.setVisible(true);
+				setVisible(false);
 				
 			}
 		});
@@ -196,12 +199,12 @@ public class SignUpFormMentee extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(!fnametxt.getText().equals("")) {
 					//add to text file
-					
-					Mentee m =new Mentee(fnametxt.getText(), lnametxt.getText(), majorcbox.getSelectedItem().toString());
+
+					Mentee m =new Mentee(fnametxt.getText(), lnametxt.getText(), majorcbox.getSelectedItem().toString(),phonenumtxt.getText(),emailtxt.getText(),yearcbox.getSelectedItem().toString());
 					System.out.print(m.toString());
 					Assignments as = new Assignments(m);
-					MainScreen ms = new MainScreen("JAD");
-					ms.setVisible(true);
+					Option op = new Option();
+					op.setVisible(true);
 					setVisible(false);
 						
 				}
@@ -220,5 +223,17 @@ public class SignUpFormMentee extends JFrame {
 		});
 		btnSubmit.setBounds(771, 521, 117, 29);
 		contentPane.add(btnSubmit);
+
+		JLabel lblNewLabel_1 = new JLabel("View Terms");
+		lblNewLabel_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				Terms_Conditions tc = new Terms_Conditions();
+				tc.setVisible(true);
+			}
+		});
+		lblNewLabel_1.setForeground(new Color(255, 255, 255));
+		lblNewLabel_1.setBounds(112, 483, 91, 16);
+		contentPane.add(lblNewLabel_1);
 	}
 }

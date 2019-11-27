@@ -5,12 +5,15 @@ import java.util.*;
 public class Mentee extends Person{
 
     private String major;
+    private String phonenum;
+    private String email;
+    private String c_year;
     private Mentor mentor;
     private MenteeStatus menteeStatus;
     private ArrayList <Mentor> mentorList = new ArrayList<Mentor>();
- 
-    public Mentee(String firstName, String lastName, String major){
-        super(firstName,lastName);
+
+    public Mentee(String firstName, String lastName, String major,String phonenum,String email, String c_year){
+        super(firstName,lastName,phonenum,email);
         this.major = major;
         menteeStatus = MenteeStatus.NotAssigned;
     }
@@ -77,7 +80,7 @@ public class Mentee extends Person{
 
     //ToString method
     public String toString(){
-        return "First Name : " +getFirstName()+"\n"+ "Last Name : "+getLastName() +"\n"+"Gender : "+getGender()+"\n"
+        return "First Name : " +getFirstName()+"\n"+ "Last Name : "+getLastName() +"\n"
         +"\n"+ "Major : "+getMajor()+ "\n"+ "Mentor : "+ getMentor()+"\n"+"status :" + getMenteeStatus();
     }
 

@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class Option extends JFrame {
 
@@ -52,7 +54,7 @@ public class Option extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnNewButton.setBounds(5, 5, 240, 268);
+		btnNewButton.setBounds(11, 122, 240, 115);
 		contentPane.add(btnNewButton);
 		
 		JButton btnMentormentee = new JButton("Mentor /Mentee");
@@ -63,7 +65,13 @@ public class Option extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnMentormentee.setBounds(258, 5, 240, 268);
+		btnMentormentee.setBounds(264, 122, 240, 115);
 		contentPane.add(btnMentormentee);
+		
+		JLabel label = new JLabel("Faculty of Science and Technology");
+		label.setForeground(new Color(255, 215, 0));
+		label.setFont(new Font(".SF NS Mono", Font.PLAIN, 17));
+		label.setBounds(61, 0, 377, 39);
+		contentPane.add(label);
 	}
 }

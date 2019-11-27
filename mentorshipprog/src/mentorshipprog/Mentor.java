@@ -8,12 +8,16 @@ public class Mentor extends Person {
     private ArrayList <String> menteePrint = new ArrayList<String>(3);
     private Status status; 
     private String major;
-   
+    private String phonenum;
+    private String department;
+    private String c_year;
     
 
-    public Mentor(String firstName, String lastName, String major){
-        super(firstName,lastName);
+    public Mentor(String firstName, String lastName, String major,String phonenum,String email, String c_year,String department){
+        super(firstName,lastName,phonenum,email);
+        this.c_year=c_year;
         this.major = major;
+        this.department=department;
         status = Status.isAvailable;
     }
 
@@ -70,6 +74,9 @@ public class Mentor extends Person {
         
     }
 
+    public String getDepartment() {
+    	return this.department;
+    }
 
 
 
@@ -77,7 +84,9 @@ public class Mentor extends Person {
     public String toString(){
         return "Full Name: "+ getFullName() + "\n"+
                 "Mentees :" + getMentees() + "\n"+
-                "Gender : " + getGender() + "\n"+
+                "PhoneNumber : " + super.getPhoneNum() + "\n"+
+                "EmailAddress : " + super.getEmail() + "\n"+
+                "Department : " + getDepartment() + "\n"+
                 "Major :" +getMajor()+"\n"+
                 "Status :" +getStatus();
     }

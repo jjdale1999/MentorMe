@@ -64,6 +64,16 @@ public class MainScreen extends JFrame {
 				LoginForm lf = new LoginForm();
 				lf.setVisible(true);
 			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblNewLabel.setForeground(Color.red);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				
+				lblNewLabel.setForeground(Color.black);
+
+			}
 		});
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 23));
@@ -77,6 +87,15 @@ public class MainScreen extends JFrame {
 				Announcements a = new Announcements();
 				a.setVisible(true);
 				setVisible(false);
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblAnnouncements.setForeground(Color.red);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblAnnouncements.setForeground(Color.black);
+
 			}
 		});
 		lblAnnouncements.setHorizontalAlignment(SwingConstants.LEFT);
@@ -101,6 +120,14 @@ public class MainScreen extends JFrame {
 				vsi.setVisible(true);
 				setVisible(false);
 			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblViewMentors.setForeground(Color.red);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblViewMentors.setForeground(Color.black);
+			}
 		});
 		lblViewMentors.setHorizontalAlignment(SwingConstants.CENTER);
 		lblViewMentors.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
@@ -114,6 +141,15 @@ public class MainScreen extends JFrame {
 				ViewStudentInfo vsi = new ViewStudentInfo("mentee");
 				vsi.setVisible(true);
 				setVisible(false);
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblViewMentees.setForeground(Color.red);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblViewMentees.setForeground(Color.black);
+
 			}
 		});
 		lblViewMentees.setHorizontalAlignment(SwingConstants.CENTER);
@@ -129,6 +165,15 @@ public class MainScreen extends JFrame {
 				cf.setVisible(true);
 				setVisible(false);
 			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				lblComplaint.setForeground(Color.red);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				lblComplaint.setForeground(Color.black);
+
+			}
 		});
 		lblComplaint.setHorizontalAlignment(SwingConstants.CENTER);
 		lblComplaint.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
@@ -143,30 +188,6 @@ public class MainScreen extends JFrame {
 		panel_2.setBackground(new Color(255, 0, 0));
 		panel_2.setBounds(6, 514, 149, 6);
 		panel.add(panel_2);
-		
-		JLabel lblCount = new JLabel("30");
-		lblCount.setFont(new Font("Silom", Font.BOLD, 99));
-		lblCount.setForeground(new Color(255, 255, 255));
-		lblCount.setBounds(321, 229, 206, 155);
-		contentPane.add(lblCount);
-		
-		JLabel lblCountees = new JLabel("40");
-		lblCountees.setFont(new Font("Silom", Font.BOLD, 99));
-		lblCountees.setForeground(new Color(255, 255, 255));
-		lblCountees.setBounds(658, 229, 227, 155);
-		contentPane.add(lblCountees);
-		
-		JLabel lblMentors = new JLabel("MENTORS");
-		lblMentors.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
-		lblMentors.setForeground(new Color(255, 255, 255));
-		lblMentors.setBounds(334, 396, 161, 122);
-		contentPane.add(lblMentors);
-		
-		JLabel lblMentees = new JLabel("MENTEES");
-		lblMentees.setFont(new Font("Lucida Grande", Font.PLAIN, 21));
-		lblMentees.setForeground(new Color(255, 255, 255));
-		lblMentees.setBounds(658, 396, 227, 122);
-		contentPane.add(lblMentees);
 		
 		JLabel lblSearch = new JLabel("Search");
 		lblSearch.setFont(new Font("Lucida Grande", Font.PLAIN, 15));
@@ -192,10 +213,11 @@ public class MainScreen extends JFrame {
 		lblGuildOffice.setBounds(267, 49, 151, 39);
 		contentPane.add(lblGuildOffice);
 		
-		JLabel lblNewLabel_2 = new JLabel("MENTORSHIP PROGRAMME COUNTER");
+		JLabel lblNewLabel_2 = new JLabel("WELCOME!!");
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setForeground(new Color(255, 255, 0));
-		lblNewLabel_2.setFont(new Font("Lao MN", Font.PLAIN, 23));
-		lblNewLabel_2.setBounds(349, 144, 427, 80);
+		lblNewLabel_2.setFont(new Font("Lao MN", Font.PLAIN, 88));
+		lblNewLabel_2.setBounds(299, 273, 570, 80);
 		contentPane.add(lblNewLabel_2);
 		
 		JButton btnNewButton = new JButton("search");
