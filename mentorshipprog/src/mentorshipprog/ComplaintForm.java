@@ -114,12 +114,28 @@ public class ComplaintForm extends JFrame {
 		panel.add(panel_1);
 		
 		JLabel label_3 = new JLabel("View Mentors");
+		label_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ViewStudentInfo vsi = new ViewStudentInfo("mentor");
+				vsi.setVisible(true);
+				setVisible(false);
+			}
+		});
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
 		label_3.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		label_3.setBounds(6, 267, 155, 38);
 		panel.add(label_3);
 		
 		JLabel label_4 = new JLabel("View Mentees");
+		label_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ViewStudentInfo vsi = new ViewStudentInfo("mentee");
+				vsi.setVisible(true);
+				setVisible(false);
+			}
+		});
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
 		label_4.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		label_4.setBounds(6, 332, 155, 38);

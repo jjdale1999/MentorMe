@@ -99,10 +99,16 @@ public class Announcements extends JFrame {
 		panel_1.setBounds(6, 6, 149, 131);
 		panel.add(panel_1);
 		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		panel_1.add(lblNewLabel_1);
+		
 		JLabel label_3 = new JLabel("View Mentors");
 		label_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				ViewStudentInfo vsi = new ViewStudentInfo("mentor");
+				vsi.setVisible(true);
+				setVisible(false);
 			}
 		});
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -111,6 +117,15 @@ public class Announcements extends JFrame {
 		panel.add(label_3);
 		
 		JLabel label_4 = new JLabel("View Mentees");
+		label_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ViewStudentInfo vsi = new ViewStudentInfo("mentee");
+				vsi.setVisible(true);
+				setVisible(false);
+				
+			}
+		});
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
 		label_4.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		label_4.setBounds(6, 332, 155, 38);

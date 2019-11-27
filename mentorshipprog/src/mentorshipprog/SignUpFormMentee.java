@@ -210,7 +210,7 @@ public class SignUpFormMentee extends JFrame {
 		label.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				setVisible(true);
+				setVisible(false);
 				LoginForm lf = new LoginForm();
 				lf.setVisible(true);
 			}
@@ -303,6 +303,9 @@ public class SignUpFormMentee extends JFrame {
 					Mentee m =new Mentee(fnametxt.getText(), lnametxt.getText(), majorcbox.getSelectedItem().toString());
 					System.out.print(m.toString());
 					Assignments as = new Assignments(m);
+					MainScreen ms = new MainScreen("JAD");
+					ms.setVisible(true);
+					setVisible(false);
 						
 				}
 				if(fnametxt.getText().equals("")) {
@@ -320,16 +323,5 @@ public class SignUpFormMentee extends JFrame {
 		});
 		btnSubmit.setBounds(771, 521, 117, 29);
 		contentPane.add(btnSubmit);
-		
-		JButton btnHome = new JButton("home");
-		btnHome.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				MainScreen ms = new MainScreen("JAD");
-				ms.setVisible(true);
-				setVisible(false);
-			}
-		});
-		btnHome.setBounds(249, 182, 117, 29);
-		contentPane.add(btnHome);
 	}
 }
