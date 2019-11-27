@@ -2,7 +2,7 @@ package mentorshipprog;
 
 import java.util.*;
 
-public class Mentee extends Person{
+public class Mentee extends Person {
 
     private String major;
     private Mentor mentor;
