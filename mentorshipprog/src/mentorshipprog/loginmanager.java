@@ -18,4 +18,16 @@ public class Loginmanager {
 		}
 		return false;
 	}
+	
+	
+	public Boolean loadpage() {
+		if(checkcredintials()) {
+			MainScreen ms = new MainScreen(this.password);
+			ms.setVisible(true);
+			return true;
+		}
+		
+		return false;
+		
+	}
 }

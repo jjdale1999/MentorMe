@@ -18,6 +18,8 @@ import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JEditorPane;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Announcements extends JFrame {
 
@@ -69,6 +71,14 @@ public class Announcements extends JFrame {
 		contentPane.add(panel);
 		
 		JLabel label = new JLabel("Logout");
+		label.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				setVisible(false);
+				LoginForm lf = new LoginForm();
+				lf.setVisible(true);
+			}
+		});
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		label.setFont(new Font("Lucida Grande", Font.PLAIN, 23));
 		label.setBounds(6, 453, 137, 38);
@@ -90,6 +100,11 @@ public class Announcements extends JFrame {
 		panel.add(panel_1);
 		
 		JLabel label_3 = new JLabel("View Mentors");
+		label_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			}
+		});
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
 		label_3.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		label_3.setBounds(6, 267, 155, 38);
@@ -102,6 +117,14 @@ public class Announcements extends JFrame {
 		panel.add(label_4);
 		
 		JLabel label_5 = new JLabel("Complaint");
+		label_5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				setVisible(false);
+				ComplaintForm cf = new ComplaintForm();
+				cf.setVisible(true);
+			}
+		});
 		label_5.setHorizontalAlignment(SwingConstants.CENTER);
 		label_5.setFont(new Font("Lucida Grande", Font.PLAIN, 20));
 		label_5.setBounds(6, 387, 155, 38);
@@ -122,15 +145,6 @@ public class Announcements extends JFrame {
 		
 		
 		
-		JButton btnSend = new JButton("Send");
-		
-		btnSend.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-			}
-		});
-		btnSend.setBounds(809, 503, 117, 29);
-		contentPane.add(btnSend);
 		
 		JLabel lblTo = new JLabel("To:");
 		lblTo.setForeground(Color.WHITE);
@@ -166,6 +180,19 @@ public class Announcements extends JFrame {
 		subjecttxt.setBounds(294, 121, 547, 26);
 		contentPane.add(subjecttxt);
 		subjecttxt.setColumns(10);
+		
+
+		JButton btnSend = new JButton("Send");
+		
+		btnSend.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EmailTester em = new EmailTester(totxt.getText(),subjecttxt.getText(),messagetxt.getText());
+				em.send();
+				
+			}
+		});
+		btnSend.setBounds(809, 503, 117, 29);
+		contentPane.add(btnSend);
 		
 	}
 }

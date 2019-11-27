@@ -14,6 +14,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class MainScreen extends JFrame {
 
@@ -55,6 +57,14 @@ public class MainScreen extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Logout");
+		lblNewLabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				setVisible(false);
+				LoginForm lf = new LoginForm();
+				lf.setVisible(true);
+			}
+		});
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Lucida Grande", Font.PLAIN, 23));
 		lblNewLabel.setBounds(6, 453, 137, 38);
@@ -175,5 +185,39 @@ public class MainScreen extends JFrame {
 		JButton btnNewButton = new JButton("search");
 		btnNewButton.setBounds(918, 27, 74, 30);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("mentee signup");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SignUpFormMentee ms = new SignUpFormMentee();
+				ms.setVisible(true);
+				setVisible(false);
+			}
+		});
+		btnNewButton_1.setBounds(203, 128, 117, 29);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("MentorSignup");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SignUpForm ms = new SignUpForm();
+				ms.setVisible(true);
+				setVisible(false);
+			}
+			
+		});
+		btnNewButton_2.setBounds(344, 128, 117, 29);
+		contentPane.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("Print");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Assignments a = new Assignments();
+				System.out.print(a.toString());
+				
+			}
+		});
+		btnNewButton_3.setBounds(203, 215, 117, 29);
+		contentPane.add(btnNewButton_3);
 	}
 }
